@@ -39,4 +39,7 @@
 -(void)changeSpeakArr:(NSArray *)arr;
 -(void)changeLanguage:(NSString *)language;
 
+-(void)clear;
+
 @end
+
