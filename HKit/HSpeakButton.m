@@ -91,6 +91,21 @@
     return [[self alloc] initWithSpeakArr:arr andLanguage:language];
 }
 
+-(void)clear{
+    if (_speech) {
+        [_speech stopSpeakingAtBoundary:AVSpeechBoundaryWord];
+        _speech = nil;
+    }
+}
+
+-(void)dealloc{
+    if (_speech) {
+        [_speech stopSpeakingAtBoundary:AVSpeechBoundaryWord];
+        _speech = nil;
+    }
+    NSLog(@"按钮挂了");
+}
+
 #pragma mark - 公开方法 public Methods
 -(void)changeSpeakStr:(NSString *)str{
     if (str.length > 100) {
@@ -246,5 +261,5 @@
     return _speakLanguage;
 }
 
-
 @end
+
